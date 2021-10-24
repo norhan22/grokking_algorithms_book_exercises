@@ -1,2 +1,2 @@
-# grokking_algorithms_book_exercises
-Grokking Algorithms book's EXERCISES
+## Grokking Algorithms book's EXERCISES
+- Binary Search 
