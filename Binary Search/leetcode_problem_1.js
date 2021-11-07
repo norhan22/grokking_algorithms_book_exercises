@@ -1,12 +1,13 @@
 /**
 
-* The Problem 
-Given an array of integers nums which is sorted in ascending order, 
-and an integer target, write a function to search target in nums. 
+* The Problem
+Given an array of integers nums which is sorted in ascending order,
+and an integer target, write a function to search target in nums.
 If target exists, then return its index. Otherwise, return -1.
 
 ** NOTE: You must write an algorithm with O(log n) runtime complexity.
 Codepen:  https://codepen.io/norhan22/pen/VwzPyEQ
+
 */
 
 /**
@@ -38,20 +39,20 @@ const simpleSearchShort = (nums, target) => (nums.includes(target) ? nums.indexO
 // Binary search
 //////////////////////
 const binarySearch = function (nums, target) {
-  let result = -1
-
-  let
+  let result = -1,
     minIndex = 0,
     maxIndex = nums.length - 1 // those for keeping track of which part of the list I’ll search in
 
   // While you haven’t narrowed it down to one element
   while (minIndex <= maxIndex) {
     // check the middle element
-    const midIndex = (minIndex + maxIndex) / 2
+    const
+      midIndex = Math.floor((minIndex + maxIndex) / 2),
+      geuss = nums[midIndex]
     //  Check the target
-    if (target === nums[midIndex]) result = midIndex
-    else if (target > nums[midIndex]) minIndex = midIndex + 1
-    else maxIndex = midIndex - 1
+    if (geuss === target) return geuss
+    else if (geuss > target) maxIndex = midIndex - 1
+    else minIndex = midIndex + 1
   }
 
   return result
